@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:3000/api
+@authToken = {{login.response.body.user.token}}
+
+### Register user 
+# @name register
+
+POST  {{baseUrl}}/users/register
+Content-Type: application/json
+
+{
+    "name": "asd2",
+    "address": "6500, teszt, 2",
+    "email": "asd2@gmail.com",
+    "password": "Asd123"
+}
+
+### login user
+# @name login
+
+POST  {{baseUrl}}/users/login
+Content-Type: application/json
+
+{
+    "email": "asd2@gmail.com",
+    "password": "Asd123"
+}
+
+### upload ad
+# @name upload
+
+POST  {{baseUrl}}/ads/upload
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "date": "2025-02-11",
+    "category": "bútor",
+    "title": "Szék",
+    "description": "Nagyon jo szek",
+    "price": 1500,
+    "userId":"1900d46d-d59d-4edd-ae33-696781f29e6a"
+}
