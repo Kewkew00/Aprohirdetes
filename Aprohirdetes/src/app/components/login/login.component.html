@@ -1,0 +1,54 @@
+<h1>Apro(kicsi) hirdetesek</h1>
+<div class="container">
+    <div class="loginbox">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Login"> 
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="ex@gmail.com">
+                </mat-form-field>  
+                
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+
+                <button mat-button color="primary" class="centered-button" [routerLink]="'/hirdetes'">Login</button>
+
+
+            </mat-tab>
+            
+            
+            <mat-tab label="Registration"> 
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="ex@gmail.com">
+                </mat-form-field>  
+                
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>    
+
+                <mat-form-field>
+                    <mat-label>Re enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    
+                </mat-form-field>    
+                <button mat-button color="primary" class="centered-button">Registration</button>
+            </mat-tab>
+            
+        </mat-tab-group>
+    </div>
+</div>
+
+
