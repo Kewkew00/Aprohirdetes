@@ -5,7 +5,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
-import { User } from '../../interfaces/user';
+import { UserLogin, UserRegister } from '../../interfaces/user';
 import { ApiService } from '../../services/api.service';
 import { MessageService } from '../../services/message.service';
 import { CommonModule } from '@angular/common';
@@ -30,9 +30,17 @@ export class LoginComponent {
   ) {}
 
 
-  user:User = {
+  user:UserLogin = {
     email: '',
     password: ''
+  }
+
+  userReg:UserRegister = {
+    name: '',
+    address: '',
+    email: '',
+    password: '',
+    confirm: ''
   }
 
   login() {
@@ -47,6 +55,21 @@ export class LoginComponent {
       }
       this.auth.saveTokenAndLogin(res.token)
       this.router.navigate(['/hirdetes'])
+    })
+  }
+
+  register() {
+    this.api.registration('users', this.userReg).subscribe((res:any) => {
+
+      if(res.success == true) {
+
+        this.message.showMessage('OK', res.message, 'success');
+      }else{
+
+        this.message.showMessage('HIBA', res.message, 'danger');
+      }
+      this.auth.saveTokenAndLogin(res.token)
+      this.router.navigate(['/'])
     })
   }
 
