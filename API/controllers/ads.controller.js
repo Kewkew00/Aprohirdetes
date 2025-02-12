@@ -2,11 +2,11 @@ const adsService = require('../services/ads.service');
 
 exports.upload = async (req, res, next) => {
     try{
-        const { date, category, title, description, price, image } = req.body;
+        const { date, category, title, description, price, image, userId } = req.body;
         if ( !date || !category || !title || !description || !price){
             return res.status(400).json({ message: 'Hiányzó adatok!'});
         }
-        const ad = await adsService.uploadAd(date, category, title, description, price, image);
+        const ad = await adsService.uploadAd(date, category, title, description, price, image, userId);
         res.status(201).json({success: true, message: "Hirdetés közzétéve!"});
     }catch(error){
         console.log(error)
@@ -46,7 +46,7 @@ exports.getOneAd = async (req, res, next) => {
         }
 
         const ad = await adsService.getAdById(req.params.id);
-
+        
         res.status(200).json({success:true, results: ad});
     }catch(error){
         next(error);

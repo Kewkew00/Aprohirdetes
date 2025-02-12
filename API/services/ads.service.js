@@ -28,6 +28,6 @@ exports.getAllAds = async () => {
     return await Advertisements.findAll();
 }
 
-exports.getAdById = async () => {
-    return await User.findOne({where: {id}});
+exports.getAdById = async (id) => {
+    return await Advertisements.findOne({where: {id}});
 }

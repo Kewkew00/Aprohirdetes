@@ -8,10 +8,10 @@ POST  {{baseUrl}}/users/register
 Content-Type: application/json
 
 {
-    "name": "asd2",
-    "address": "6500, teszt, 2",
-    "email": "asd2@gmail.com",
-    "password": "Asd123"
+    "name": "Felhasznalo 1",
+    "address": "6500, idenegyere utca, 2",
+    "email": "felhasznalo@gmail.com",
+    "password": "Felhasznalo123"
 }
 
 ### login user
@@ -21,8 +21,8 @@ POST  {{baseUrl}}/users/login
 Content-Type: application/json
 
 {
-    "email": "asd2@gmail.com",
-    "password": "Asd123"
+    "email": "felhasznalo@gmail.com",
+    "password": "Felhasznalo123"
 }
 
 ### upload ad
@@ -33,10 +33,30 @@ Content-Type: application/json
 Authorization: Bearer {{authToken}}
 
 {
-    "date": "2025-02-11",
-    "category": "bútor",
-    "title": "Szék",
-    "description": "Nagyon jo szek",
-    "price": 1500,
-    "userId":"1900d46d-d59d-4edd-ae33-696781f29e6a"
+    "date": "2025-02-12",
+    "category": "Videó játék",
+    "title": "Fortnite",
+    "description": "ingyenes de eladom",
+    "price": 10,
+    "userId":"7ef5cabb-4814-455b-a66d-59ccd4cc9aa2"
 }
+
+### delete ad
+# @name delete
+
+DELETE  {{baseUrl}}/ads/delete/92e8b8c0-5d72-447f-8f55-9a314aa3f6e8
+Content-Type: application/json
+Authorization: Bearer {{authToken}}
+
+### get all ad
+# @name getAll
+
+GET {{baseUrl}}/ads/get
+Authorization: Bearer {{authToken}}
+
+### get ad by id
+# @name getOneById
+
+GET {{baseUrl}}/ads/get/4d6b4c3d-542d-4e9a-8ea4-51ee0cf5cce0
+Content-Type: application/json
+Authorization: Bearer {{authToken}}

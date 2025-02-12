@@ -7,12 +7,12 @@ const { authMiddleware } = require('../middlewares/auth.middleware');
 router.post('/upload',authMiddleware ,adsContoller.upload);
 
 // delete ad
-router.post('/delete',authMiddleware ,adsContoller.delete);
+router.delete('/delete/:id',authMiddleware ,adsContoller.delete);
 
 // get all ad
-router.post('/',authMiddleware ,adsContoller.getAllAd);
+router.get('/get',authMiddleware ,adsContoller.getAllAd);
 
 // get one ad by id
-router.post('/:id',authMiddleware ,adsContoller.getOneAd);
+router.get('/get/:id',authMiddleware ,adsContoller.getOneAd);
 
 module.exports = router
