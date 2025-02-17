@@ -11,11 +11,12 @@ import { MessageService } from '../../services/message.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule],
+  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -58,20 +59,7 @@ export class LoginComponent {
     })
   }
 
-  register() {
-    this.api.registration('users', this.userReg).subscribe((res:any) => {
-
-      if(res.success == true) {
-
-        this.message.showMessage('OK', res.message, 'success');
-      }else{
-
-        this.message.showMessage('HIBA', res.message, 'danger');
-      }
-      this.auth.saveTokenAndLogin(res.token)
-      this.router.navigate(['/'])
-    })
-  }
+ 
 
 
 }

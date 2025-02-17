@@ -1,0 +1,20 @@
+<mat-toolbar color="primary"> 
+    <mat-toolbar-row>
+        <span>Apro(kicsi) hirdetesek</span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/login']" >
+              <mat-icon>login</mat-icon>
+              <span>Login</span>
+            </button>
+
+            <button mat-menu-item [routerLink]="['/register']" >
+              <mat-icon>add</mat-icon>
+              <span >Registration</span>
+            </button>
+          </mat-menu>
+          
+      
+    </mat-toolbar-row>
