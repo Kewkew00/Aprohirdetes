@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Biztosítja, hogy a teljes képernyőt lefedje */
+    overflow: hidden; /* Eltünteti a scroll bar-t */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* A container magassága teljes képernyő */
+    overflow: hidden; /* Eltünteti a scroll bar-t */
+}
+
+.regbox {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    overflow: hidden; /* Ha bármilyen elem túllépi a doboz méretét, azt elrejti */
+    padding: 10px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+.centered-button {
+    width: 100%;
+    text-align: center;
+}
+h1{
+    text-align: center;
+}
