@@ -49,7 +49,7 @@ export class ApiService {
   }
 
   selectAll(table: string){
-    return this.http.get(this.server + '/' + table, this.tokenHeader());
+    return this.http.get(this.server + '/' + table + '/get', this.tokenHeader());
   }
 
   insert(table: string, data:object){
