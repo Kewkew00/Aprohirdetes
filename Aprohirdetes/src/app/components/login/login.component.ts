@@ -17,11 +17,12 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent,FooterComponent],
+  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent,FooterComponent,],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements AfterViewInit{
+export class LoginComponent {
+
   hide = true;
   constructor
   (
