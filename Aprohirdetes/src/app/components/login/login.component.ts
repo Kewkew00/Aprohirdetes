@@ -36,14 +36,6 @@ export class LoginComponent {
     password: ''
   }
 
-  userReg:UserRegister = {
-    name: '',
-    address: '',
-    email: '',
-    password: '',
-    confirm: ''
-  }
-
   login() {
     this.api.login('users', this.user).subscribe((res:any) => {
 
@@ -54,7 +46,8 @@ export class LoginComponent {
 
         this.message.showMessage('HIBA', res.message, 'danger');
       }
-      this.auth.saveTokenAndLogin(res.token)
+      this.auth.saveTokenAndLogin(res.user.token)
+      console.log(res.user.token)
       this.router.navigate(['/hirdetes'])
     })
   }

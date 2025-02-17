@@ -10,14 +10,4 @@ const storoge = multer.diskStorage({
     }
 });
 
-const upload = multer({
-    storage: storoge,
-    limits: {fieldSize: 1024 * 1024* 5},
-    fileFilter: (req, file, cb) => {
-        if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-            cb(null, true)
-        } else {
-            cb(new Error('Only .jpg and .png files are allowed'), false);
-        }
-    }
-});
+const upload = multer({storage: storoge});
