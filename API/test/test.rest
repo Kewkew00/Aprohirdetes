@@ -21,8 +21,8 @@ POST  {{baseUrl}}/users/login
 Content-Type: application/json
 
 {
-    "email": "felhasznalo@gmail.com",
-    "password": "Felhasznalo123"
+    "email": "kevin@turr.hu",
+    "password": "Turr123"
 }
 
 ### upload ad

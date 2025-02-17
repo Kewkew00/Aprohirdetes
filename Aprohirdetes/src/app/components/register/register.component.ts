@@ -47,6 +47,7 @@ export class RegisterComponent {
       if(res.success == true) {
 
         this.message.showMessage('OK', res.message, 'success');
+        this.router.navigate(['/login']);
       }else{
 
         this.message.showMessage('HIBA', res.message, 'danger');
