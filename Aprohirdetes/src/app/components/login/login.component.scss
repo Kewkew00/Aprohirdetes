@@ -22,8 +22,25 @@ body, html {
     gap: 16px;
     overflow: hidden; /* Ha bármilyen elem túllépi a doboz méretét, azt elrejti */
     padding: 10px;
+    border: 1px solid #3b3535;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enyhe árnyék */
+    border-radius: 8px; /* Finomított sarkok */
+    background-color: #3b3535; 
+    opacity: 0; /* Kezdetben teljesen átlátszó */
+    transform: translateY(20px); /* Az animációval emelkedni fog */
+    animation: fadeIn 0.8s ease-out forwards;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Kezdeti helyzet */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* A végső pozíció */
+    }
+}
 mat-form-field {
     width: 100%;
 }
