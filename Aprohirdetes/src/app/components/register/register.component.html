@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="regbox">
+        <mat-tab-group dynamicHeight>
+            <mat-tab label="Registration"> 
+                <mat-form-field class="example-full-width">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="" [(ngModel)] = "userReg.name">
+                </mat-form-field> 
+        
+                <mat-form-field class="example-full-width">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="" [(ngModel)] = "userReg.address">
+                </mat-form-field> 
+        
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="ex@gmail.com" [(ngModel)] = "userReg.email">
+                </mat-form-field>  
+                
+                <mat-form-field>
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)] = "userReg.password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>    
+        
+                <mat-form-field>
+                    <mat-label>Re enter your password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)] = "userReg.confirm">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    
+                </mat-form-field>    
+                <button mat-button color="primary" class="centered-button" (click)="register()"><b>Registration</b></button>
+            </mat-tab> 
+            
+            
+        </mat-tab-group>
+        
+    </div>
+</div>
