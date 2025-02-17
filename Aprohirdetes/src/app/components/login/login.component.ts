@@ -23,8 +23,6 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class LoginComponent {
 
-
-
   hide = true;
   constructor
   (
