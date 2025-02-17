@@ -22,6 +22,10 @@ body, html {
     gap: 16px;
     overflow: hidden; /* Ha bármilyen elem túllépi a doboz méretét, azt elrejti */
     padding: 10px;
+    border: 1px solid #d1c4e9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enyhe árnyék */
+    border-radius: 8px; /* Finomított sarkok */
+    background-color: #fff; /* Fehér háttér */
 }
 
 mat-form-field {
