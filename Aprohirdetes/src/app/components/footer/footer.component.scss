@@ -1,0 +1,29 @@
+/* footer.component.css */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #673ab7; /* Footer háttérszíne */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 170px;
+    position: relative;
+    bottom: 0;
+    opacity: 0; /* Kezdetben láthatatlan */
+    transform: translateY(100px); /* Kezdetben az oldal alján kívül */
+    animation: slideUp 1s forwards; /* Animáció alkalmazása */
+  }
+  
+  /* Az animáció beállítása */
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(100px); /* Kezdeti helyzet: az oldal alja */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Végső helyzet: az oldal alján */
+    }
+  }
+  
