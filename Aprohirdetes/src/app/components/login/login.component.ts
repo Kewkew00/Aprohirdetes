@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {MatTabsModule} from '@angular/material/tabs';
+import { AfterViewInit, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
+import {MatTabGroup, MatTabsModule} from '@angular/material/tabs';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
@@ -20,7 +20,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements AfterViewInit{
   hide = true;
   constructor
   (
@@ -44,6 +44,16 @@ export class LoginComponent {
     confirm: ''
   }
 
+  @ViewChild('.tabGroup') tabGroup!: MatTabGroup;
+
+  ngAfterViewInit(): void {
+    console.log(this.tabGroup)
+  }
+
+  navigateToLoginTab(){
+    this.tabGroup.selectedIndex = 0
+  }
+
   login() {
     this.api.login('users', this.user).subscribe((res:any) => {
 
@@ -58,8 +68,5 @@ export class LoginComponent {
       this.router.navigate(['/hirdetes'])
     })
   }
-
- 
-
 
 }
