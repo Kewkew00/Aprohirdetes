@@ -1,9 +1,15 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, viewChild } from '@angular/core';
-import {MatTabGroup, MatTabsModule} from '@angular/material/tabs';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  viewChild,
+} from '@angular/core';
+import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterModule } from '@angular/router';
 import { UserLogin, UserRegister } from '../../interfaces/user';
 import { ApiService } from '../../services/api.service';
@@ -17,40 +23,44 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule, NavbarComponent,FooterComponent,],
+  imports: [
+    MatTabsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    CommonModule,
+    FormsModule,
+    NavbarComponent,
+    FooterComponent,
+  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-
   hide = true;
-  constructor
-  (
+  constructor(
     private api: ApiService,
     private router: Router,
     private auth: AuthService,
     private message: MessageService
   ) {}
 
-
-  user:UserLogin = {
+  user: UserLogin = {
     email: '',
-    password: ''
-  }
+    password: '',
+  };
 
   login() {
-    this.api.login('users', this.user).subscribe((res:any) => {
-
-      if(res.success == true) {
-
+    this.api.login('users', this.user).subscribe((res: any) => {
+      if (res.success == true) {
         this.message.showMessage('OK', res.message, 'success');
-      }else{
-
+      } else {
         this.message.showMessage('HIBA', res.message, 'danger');
       }
       this.auth.saveTokenAndLogin(res.user.token)
       this.router.navigate(['/hirdetes'])
     })
-  }
 
+  }
 }

@@ -3,20 +3,17 @@ import { BehaviorSubject } from 'rxjs';
 import { Message } from '../interfaces/message';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class MessageService {
-
   private messageSubject = new BehaviorSubject<Message | null>(null);
-  public  messageSubject$ = this.messageSubject.asObservable();
+  public messageSubject$ = this.messageSubject.asObservable();
 
-  showMessage(title: string, message: string, severity: string){
+  showMessage(title: string, message: string, severity: string) {
     this.messageSubject.next({ title, message, severity });
   }
 
-
-  clearMessage(){
+  clearMessage() {
     this.messageSubject.next(null);
   }
 }

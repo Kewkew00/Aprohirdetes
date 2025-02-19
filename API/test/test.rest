@@ -35,10 +35,10 @@ Authorization: Bearer {{authToken}}
 {
     "date": "2025-02-12",
     "category": "Videó játék",
-    "title": "Fortnite",
+    "title": "Fortnite3",
     "description": "ingyenes de eladom",
-    "price": 10,
-    "userId":"7ef5cabb-4814-455b-a66d-59ccd4cc9aa2"
+    "price": 2000,
+    "userId":"185989f3-e050-4ae8-91e4-ea0b200863ba"
 }
 
 ### delete ad

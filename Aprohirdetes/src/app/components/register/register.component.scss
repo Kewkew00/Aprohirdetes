@@ -1,54 +1,55 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%; /* Biztosítja, hogy a teljes képernyőt lefedje */
-    overflow: hidden; /* Eltünteti a scroll bar-t */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; 
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* A container magassága teljes képernyő */
-    overflow: hidden; /* Eltünteti a scroll bar-t */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  overflow: hidden;
 }
 
 .regbox {
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    overflow: hidden; /* Ha bármilyen elem túllépi a doboz méretét, azt elrejti */
-    padding: 10px;
-    border: 1px solid #3b3535;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Enyhe árnyék */
-    border-radius: 8px; /* Finomított sarkok */
-    background-color: #3b3535; 
-    opacity: 0; /* Kezdetben teljesen átlátszó */
-    transform: translateY(20px); /* Az animációval emelkedni fog */
-    animation: fadeIn 0.8s ease-out forwards;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  overflow: hidden;
+  padding: 10px;
+  border: 1px solid #3b3535;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px; 
+  background-color: #3b3535;
+  opacity: 0; 
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px); /* Kezdeti helyzet */
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0); /* A végső pozíció */
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 mat-form-field {
-    width: 100%;
+  width: 100%;
 }
 
 .centered-button {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
