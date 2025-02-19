@@ -15,11 +15,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MAT_DATE_LOCALE, provideNativeDateAdapter} from '@angular/material/core';
 import moment, { Moment } from 'moment';
 import { Observable } from 'rxjs';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-hirdetes',
   standalone: true,
-  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule,MatSelectModule, MatInputModule, MatFormFieldModule, MatExpansionModule, MatDatepickerModule],
+  imports: [MatCardModule, MatButtonModule, CommonModule, FormsModule,MatSelectModule, MatInputModule, MatFormFieldModule, MatExpansionModule, MatDatepickerModule, FooterComponent],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue:"en-GB"},
     provideNativeDateAdapter()],

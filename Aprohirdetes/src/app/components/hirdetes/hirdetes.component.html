@@ -1,4 +1,5 @@
-<div class="uploadAd">
+<div class="uploadDiv">
+  <div class="uploadAd">
     <mat-accordion >
         <mat-expansion-panel (opened)="panelOpenState = true"
                              (closed)="panelOpenState = false">
@@ -52,6 +53,7 @@
                 </mat-expansion-panel>
       </mat-accordion>
 </div>
+</div>
   
 <div class="container">
         <mat-card class="example-card" *ngFor="let hirdetes of hirdetesek">
@@ -71,3 +73,5 @@
             </mat-card-actions>
           </mat-card>
 </div>  
+
+<app-footer></app-footer>
