@@ -16,43 +16,45 @@ import { FooterComponent } from '../footer/footer.component';
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [MatTabsModule, MatInputModule, MatFormFieldModule, MatIconModule, MatButtonModule, CommonModule, FormsModule, FooterComponent],
+  imports: [
+    MatTabsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatButtonModule,
+    CommonModule,
+    FormsModule,
+    FooterComponent,
+  ],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.scss'
+  styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
-
   hide = true;
-  constructor
-  (
+  constructor(
     private api: ApiService,
     private router: Router,
     private auth: AuthService,
     private message: MessageService
   ) {}
 
-
-
-  userReg:UserRegister = {
+  userReg: UserRegister = {
     name: '',
     address: '',
     email: '',
     password: '',
-    confirm: ''
-  }
+    confirm: '',
+  };
 
   register() {
-    this.api.registration('users', this.userReg).subscribe((res:any) => {
-
-      if(res.success == true) {
-
+    this.api.registration('users', this.userReg).subscribe((res: any) => {
+      if (res.success == true) {
         this.message.showMessage('OK', res.message, 'success');
         this.router.navigate(['/login']);
-      }else{
-
+      } else {
         this.message.showMessage('HIBA', res.message, 'danger');
       }
-      this.auth.saveTokenAndLogin(res.token)
-    })
+      this.auth.saveTokenAndLogin(res.token);
+    });
   }
 }

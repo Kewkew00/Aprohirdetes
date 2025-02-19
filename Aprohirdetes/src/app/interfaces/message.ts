@@ -1,6 +1,5 @@
-export interface Message  {
-    title: string;
-    message: string;
-    severity: string;
+export interface Message {
+  title: string;
+  message: string;
+  severity: string;
 }
-  
