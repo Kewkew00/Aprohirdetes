@@ -49,7 +49,6 @@ export class LoginComponent {
         this.message.showMessage('HIBA', res.message, 'danger');
       }
       this.auth.saveTokenAndLogin(res.user.token)
-      console.log(res.user.token)
       this.router.navigate(['/hirdetes'])
     })
   }

@@ -3,8 +3,26 @@ const upload = require('../middlewares/upload.middleware')
 
 exports.upload = async (req, res, next) => {
     try{
+
+        console.log('Body:', req.body);
+        console.log('File:', req.file);
+        // Ellenőrizzük, hogy van-e feltöltött fájl
+        if (!req.file) {
+            return res.status(400).json({
+                success: false,
+                message: 'Nem található feltöltött fájl.',
+            });
+        }
+
+        // Feltöltött fájl adatai
+        const file = req.file;
+
+
+
+
         const { date, category, title, description, price, userId } = req.body;
         const image = req.file ? req.file.filename : null;
+      //  upload.single(image);
 
         if ( !date || !category || !title || !description || !price){
             return res.status(400).json({ message: 'Hiányzó adatok!'});

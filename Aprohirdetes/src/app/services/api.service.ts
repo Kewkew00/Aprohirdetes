@@ -52,8 +52,8 @@ export class ApiService {
     return this.http.get(this.server + '/' + table + '/get', this.tokenHeader());
   }
 
-  insert(table: string, data:object){
-    return this.http.post(this.server + '/'+table, data, this.tokenHeader());
+  insert(table: string, data:FormData){
+    return this.http.post(this.server + '/' + table +'/upload', data, this.tokenHeader());
   }
 
   update(table:string, id:string, data:object){

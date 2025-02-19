@@ -49,14 +49,15 @@ export class HirdetesComponent implements OnInit{
   previews: string[] = [];
   imageInfos?: Observable<any>;
 
-
+  
   advertisement:any={
     title:"",
     category:"",
     description:"",
     price:"",
     image:"",
-    date: moment().format('YYYY-MM-DD')
+    date: moment().format('YYYY-MM-DD'),
+    userId: null
   };
 
   ngOnInit(): void {
@@ -69,8 +70,48 @@ export class HirdetesComponent implements OnInit{
       console.log(res.results)
     })
   }
-  uploadAd(){
-    console.log(this.advertisement)
+
+  onFileSelected(event: any): void {
+    const file: File = event.target.files[0];
+ 
+    if (file) {
+      this.selectedFiles = event.target.files;
+     
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.advertisement.image = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
+  uploadAd() {
+    const formData: FormData = new FormData();
+    if (this.selectedFiles) {
+     
+      const file: File | null = this.selectedFiles[0];
+      if (file) {
+        console.log('>>>>', file)
+        formData.append('file', file);
+      }
+    }
+
+    formData.append('title', this.advertisement.title);
+    formData.append('category', this.advertisement.category);
+    formData.append('description', this.advertisement.description);
+    formData.append('price', this.advertisement.price.toString());
+    formData.append('date', this.advertisement.date);
+    formData.append('userId', this.auth.getLoggedInUser().id);
+
+   
+    this.saveAd(formData);
+  }
+
+  saveAd(formData: FormData) {
+    this.api.insert('ads', formData).subscribe((res: any) => {
+      console.log(formData);
+      // Refresh the advertisement list after successful upload
+      this.getAllAds();
+    });
+  }
 }

@@ -16,6 +16,7 @@ app.use(express.urlencoded({extended: true}));
 // útvonalak lekezelése
 app.use('/api', require('./routers/index'));
 app.use(errorMiddleware);
+app.use('/uploads', express.static('uploads'));
 
 // ORM adatbázis szinkronizáció
 db.sync({alter: config.db.alter, force: config.db.force})
