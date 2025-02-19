@@ -19,8 +19,16 @@
           <mat-form-field>
             <mat-label>Category</mat-label>
             <mat-select [(ngModel)]="advertisement.category">
-              <mat-option value="one">First option</mat-option>
-              <mat-option value="two">Second option</mat-option>
+              <mat-option value="Ingatlan"></mat-option>
+              <mat-option value="Autók és járművek">Autók és járművek</mat-option>
+              <mat-option value="Elektronikai eszközök">Elektronikai eszközök</mat-option>
+              <mat-option value="Bútorok és lakberendezés">Bútorok és lakberendezés</mat-option>
+              <mat-option value="Ruházat és kiegészítők">Ruházat és kiegészítők</mat-option>
+              <mat-option value="Állatok és állatgondozás">Állatok és állatgondozás</mat-option>
+              <mat-option value="Sport eszközök">Sport eszközök</mat-option>
+              <mat-option value="Hobbi és szabadidő">Hobbi és szabadidő</mat-option>
+              <mat-option value="Erotikus játék">Erotikus játék</mat-option>
+              <mat-option value="Addiktív szerek">Addiktív szerek</mat-option>
             </mat-select>
           </mat-form-field>
 
@@ -37,10 +45,7 @@
             <input matInput type="number" [(ngModel)]="advertisement.price" />
           </mat-form-field>
 
-                <!-- <mat-form-field>
-                    <mat-label>Image</mat-label>-->
-                    <input type="file" (change)="onFileSelected($event)">
-                <!--</mat-form-field>-->
+          <input type="file" (change)="onFileSelected($event)" class="basy">
 
 
           <mat-form-field>
@@ -74,8 +79,7 @@
     </mat-card-header>
     <img
       mat-card-image
-      src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-      alt="Photo of a Shiba Inu"
+      src=""
       class="adImage"
     />
     <mat-card-content>
