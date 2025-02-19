@@ -1,9 +1,42 @@
 .uploadAd{
+  height: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   padding: 10px;
+  width: 90%;
+}
+
+.uploadDiv{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+mat-card{
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 500px; 
+
+}
+
+mat-card-content{
+  margin-top: 10px;
+}
+
+mat-card-header{
+  color: whitesmoke;
+}
+
+mat-card-content{
+  color: whitesmoke;
+}
+
+img{
+  border-radius: 20px;
+  margin: 20px;
 }
 
 hr{
@@ -25,15 +58,15 @@ hr{
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
-    height: 100vh; /* A container magassága teljes képernyő */
-    overflow: hidden; /* Eltünteti a scroll bar-t */
+    flex-direction: row;
+    height: 70%; 
+    overflow: hidden;
+    margin: 10px;
 }
 .cardbox {
-    width: 100%;
-    max-width: 400px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +79,15 @@ hr{
 }
 
 .adImage{
-  width: 80%;
+  width: 95%;
   align-self: center;
   padding: 3px;
+}
+
+@media (max-width: 768px) {
+  .container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px ;
+  }
 }
