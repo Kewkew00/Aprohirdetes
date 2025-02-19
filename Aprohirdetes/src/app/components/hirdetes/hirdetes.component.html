@@ -37,10 +37,11 @@
             <input matInput type="number" [(ngModel)]="advertisement.price" />
           </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Image</mat-label>
-            <input matInput />
-          </mat-form-field>
+                <!-- <mat-form-field>
+                    <mat-label>Image</mat-label>-->
+                    <input type="file" (change)="onFileSelected($event)">
+                <!--</mat-form-field>-->
+
 
           <mat-form-field>
             <mat-label>Choose a date</mat-label>
