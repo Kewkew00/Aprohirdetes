@@ -3,21 +3,24 @@ import { HirdetesComponent } from './components/hirdetes/hirdetes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 export const routes: Routes = [
-    {
-        path: 'login', component: LoginComponent
-    },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
 
-    {
-        path: 'register', component: RegisterComponent
-    },
+  {
+    path: 'register',
+    component: RegisterComponent,
+  },
 
-    {
-        path: 'hirdetes', component: HirdetesComponent 
-    },
+  {
+    path: 'hirdetes',
+    component: HirdetesComponent,
+  },
 
-    {
-        path: '', redirectTo:'login', pathMatch:'full'
-    }
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full',
+  },
 ];
-   
-

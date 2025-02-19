@@ -1,12 +1,12 @@
 export interface UserLogin {
-    email: '',
-    password: ''
+  email: '';
+  password: '';
 }
 
 export interface UserRegister {
-    name: '',
-    address: '',
-    email: '',
-    password: '',
-    confirm: ''
+  name: '';
+  address: '';
+  email: '';
+  password: '';
+  confirm: '';
 }
