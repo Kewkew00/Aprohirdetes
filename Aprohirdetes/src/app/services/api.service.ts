@@ -73,7 +73,7 @@ export class ApiService {
 
   delete(table: string, id: string) {
     return this.http.delete(
-      this.server + '/' + table + '/id/eq/' + id,
+      this.server + '/' + table + '/delete/' + id,
       this.tokenHeader()
     );
   }

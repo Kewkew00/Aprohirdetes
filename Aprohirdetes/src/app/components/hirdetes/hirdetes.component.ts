@@ -19,6 +19,8 @@ import {
 import moment, { Moment } from 'moment';
 import { Observable } from 'rxjs';
 import { FooterComponent } from '../footer/footer.component';
+import {MatSnackBar} from '@angular/material/snack-bar';
+//import { Message } from '../../interfaces/message';
 
 @Component({
   selector: 'app-hirdetes',
@@ -47,10 +49,13 @@ export class HirdetesComponent implements OnInit {
     private api: ApiService,
     private router: Router,
     private auth: AuthService,
-    private message: MessageService
+    private message: MessageService,
+    private _snackBar: MatSnackBar
   ) {}
 
   hirdetesek: any = [];
+  messages:any[]= [];
+
 
   panelOpenState = false;
 
@@ -129,4 +134,18 @@ export class HirdetesComponent implements OnInit {
     });
   }
 
+  deleteAd(id:string){
+    const result = window.confirm("Biztosan törölni szeretnéd ezt a hirdetést?");
+    
+    if (result) {
+      this.api.delete('ads', id).subscribe((res: any)=>{
+        console.log(res);
+        this.messages=res;
+        this.getAllAds();
+      })
+    } else {
+      // Ha a Cancel gombot nyomták meg (false)
+      console.log("A hirdetés nem lett törölve");
+    }
+  }
 }
